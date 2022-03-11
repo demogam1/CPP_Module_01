@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: misaev <misaev@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 14:20:53 by misaev            #+#    #+#             */
-/*   Updated: 2022/03/08 12:01:04 by misaev           ###   ########.fr       */
+/*   Created: 2022/03/09 15:03:56 by misaev            #+#    #+#             */
+/*   Updated: 2022/03/10 11:20:12 by misaev           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
 #include <iostream>
+#include "Weapon.hpp"
 #define NC "\e[0m"
 #define RED "\e[0;31m"
 #define GRN "\e[0;32m"
 #define CYN "\e[0;36m"
 #define REDB "\e[41m"
 
-class Zombie
+class HumanA
 {
-private:
-    std::string name;
-public:
-    Zombie();
-    Zombie(std::string name);
-    void announce (void) const;
-    Zombie *newZombie (std::string name);
-    void randomChump(std::string name);
-    ~Zombie();
+    public:
+        HumanA();
+        HumanA(std::string name, Weapon &weapon);
+        HumanA(std::string name);
+        void setWeapon(Weapon weapon);
+        void attack();
+        ~HumanA();
+    private:
+        Weapon weapon;
+        std::string name;
 };
-
-Zombie *newZombie(std::string name);
-void randomChump(std::string name);

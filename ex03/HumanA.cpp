@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: misaev <misaev@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 14:37:51 by misaev            #+#    #+#             */
-/*   Updated: 2022/03/08 12:05:34 by misaev           ###   ########.fr       */
+/*   Created: 2022/03/09 15:03:06 by misaev            #+#    #+#             */
+/*   Updated: 2022/03/10 11:21:28 by misaev           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-
-Zombie::Zombie(std::string name)
+HumanA::HumanA(std::string name, Weapon &weapon)
 {
     this->name = name;
-    std::cout << CYN << "Zombie named " << this->name << " is created" << NC << std::endl;   
+    this->weapon = weapon;
+    std::cout << "Constructor of HumanA is called\n";
     return;
 }
 
-Zombie::Zombie()
+HumanA::HumanA(std::string name)
 {
-    std::cout << GRN "Constructeur Appeler\n" NC;
-    return ;
-}
-
-Zombie::~Zombie()
-{
-    std::cout << RED "Destructeur Appeler\n" NC;
+    this->name = name;
+    std::cout << "Constructor of HumanA is called\n";
     return;
 }
 
-void Zombie::announce() const
+void HumanA::attack()
 {
-    std::cout << CYN << this->name << ": BraiiiiiiinnnzzzZ..." << NC << std::endl;
+    std::cout << RED << this->name << " attacks with their " << this->weapon.getType() << NC << std::endl;
     return;
 }
+
+HumanA::~HumanA()
+{
+    std::cout << "Destructor of HumanA is called\n";
+    return;
+}
+

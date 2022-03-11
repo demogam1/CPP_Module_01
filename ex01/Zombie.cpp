@@ -6,7 +6,7 @@
 /*   By: misaev <misaev@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:37:51 by misaev            #+#    #+#             */
-/*   Updated: 2022/03/08 12:05:34 by misaev           ###   ########.fr       */
+/*   Updated: 2022/03/08 14:02:59 by misaev           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,9 @@ void Zombie::announce() const
 {
     std::cout << CYN << this->name << ": BraiiiiiiinnnzzzZ..." << NC << std::endl;
     return;
+}
+
+void Zombie::set_name(std::string name)
+{
+    this->name = name;
 }
