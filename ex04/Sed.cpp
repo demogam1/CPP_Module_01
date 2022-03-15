@@ -6,7 +6,7 @@
 /*   By: misaev <misaev@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:02:38 by misaev            #+#    #+#             */
-/*   Updated: 2022/03/11 14:58:01 by misaev           ###   ########.fr       */
+/*   Updated: 2022/03/14 09:50:17 by misaev           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,6 @@ void Sed::printS1()
 
 Sed::~Sed()
 {
-    std::cout << "Destructor Sed appeler" << std::endl;
+    std::cout << RED << "Destructor Sed appeler" << NC << std::endl;
     return;
 }

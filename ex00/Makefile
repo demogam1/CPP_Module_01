@@ -12,4 +12,4 @@ $(NAME): $(SRC)
 	$(CC) $(SRC) -o $(NAME)
 
 fclean:
-	rm -rf $(NAME)
+	rm $(NAME)

@@ -6,23 +6,29 @@
 /*   By: misaev <misaev@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:45:39 by misaev            #+#    #+#             */
-/*   Updated: 2022/03/11 15:01:19 by misaev           ###   ########.fr       */
+/*   Updated: 2022/03/14 10:15:35 by misaev           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
-int main()
+int main(int ac, char **arg)
 {
 
-    
+    if (ac != 4)
+    {
+         std::cout << RED << "The program take 3 parameters ! ---> ./Sed [Filename] [Word to Replace] [Word to input]" << std::endl;
+        return 0;
+    }
+    else
+    {        
         std::string filname;
         std::string s1;
         std::string s2;
         std::fstream fs;
-    
-        std::cout << CYN << "Enter source file name: " << NC;
-        std::getline(std::cin, filname);
+        filname.assign(arg[1]);
+        s1.assign(arg[2]);
+        s2.assign(arg[3]);
         if (filname.empty() == true)
         {
             std::cout << RED << "the filname is empty !" << std::endl;
@@ -35,18 +41,14 @@ int main()
             return 0;
         }
         fs.close();
-        std::cout << CYN << "Enter the word that you want to replace: " << NC;
-        std::getline(std::cin, s1);
         if (s1.empty() == true)
         {
-            std::cout << RED << "The string is empty\n";
+            std::cout << RED << "The second argument is empty\n";
             return 0;
         }
-        std::cout << CYN << "By what word you want to replace it ? " << NC;
-        std::getline(std::cin, s2);    
         if (s2.empty() == true)
         {
-            std::cout << RED << "The string is empty\n";
+            std::cout << RED << "The last argument is empty\n";
             return 0;
         }
         Sed toto(filname, s1, s2);
@@ -55,6 +57,7 @@ int main()
         toto.printS1();
         toto.copyNewCharToFile();
         return 1;
+    }
     
 }
 
